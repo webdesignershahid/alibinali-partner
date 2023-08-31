@@ -1,0 +1,61 @@
+
+@font-face {
+    font-family: 'Noto Sans Arabic';
+    src: url('NotoSansArabic-Medium.woff2') format('woff2'),
+        url('NotoSansArabic-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Arabic';
+    src: url('NotoSansArabic-SemiBold.woff2') format('woff2'),
+        url('NotoSansArabic-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Arabic';
+    src: url('NotoSansArabic-Regular.woff2') format('woff2'),
+        url('NotoSansArabic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dax';
+    src: url('DaxMedium.woff2') format('woff2'),
+        url('DaxMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dax';
+    src: url('DaxLight.woff2') format('woff2'),
+        url('DaxLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dax';
+    src: url('Dax.woff2') format('woff2'),
+        url('Dax.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Dax";
+    src: url("DaxBold.woff2") format("woff2"),
+    url("DaxBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}

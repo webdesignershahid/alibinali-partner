@@ -1,0 +1,97 @@
+/*--------------------------------------------------------------
+# Footer-block
+--------------------------------------------------------------*/
+footer {
+    .footer-top {
+        padding: 2rem 0;
+        @include md-down {
+            padding: 2rem 0 4rem;
+        }
+
+        .footer-menu-widget {
+            padding: 2rem 0;
+            @include md-down {
+                padding: 2rem 0 0
+            }
+
+            li {
+                margin: 1rem 0;
+
+                a {
+                    transition: all .2s;
+                    font-weight: 500;
+                    padding: .2rem 0;
+                    display: inline-block;
+                    font-size: 1.5rem;
+                    &:hover {
+                        color: var(--color__blue);
+                    }
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        background-color: #9da1a5;
+        padding: 2rem 0;
+        p {
+            font-weight: 500;
+            font-size: 1.5rem;
+        }
+        ul {
+            gap: 1.5rem;
+
+            li {
+                & + li {
+                    @include md-down {
+                        margin-top: 1rem;
+                    }
+                    @include lg-up {
+                        border-left: .1rem solid var(--color__white);
+                        padding-left: 1.5rem;
+                    }
+                }
+            }
+        }
+        .social-media {
+            @include flex-center;
+            gap: .5rem;
+            a {
+                @include inline-flex-center;
+                width: 3rem;
+                height: 3rem;
+                border: .1rem solid var(--color__white);
+                border-radius: 50%;
+                transition: all .2s;
+                
+                svg {
+                    path {
+                        transition: all .2s;
+                    }
+                }
+
+                &:hover {
+                    background-color: var(--color__white);
+                    svg {
+                        path {
+                            fill: #000;
+                        }
+                    }
+                }
+            }
+        }
+        .pmt-method {
+            gap: .5rem;
+            display: flex;
+            justify-content: center;
+            a {
+                background-color: var(--color__white);
+                padding: 0.5rem 0.3rem;
+                border-radius: 0.5rem;
+                width: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

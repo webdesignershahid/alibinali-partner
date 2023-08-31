@@ -1,0 +1,16 @@
+/*--------------------------------------------------------------
+# Section Title
+--------------------------------------------------------------*/
+.section-title {
+    margin-bottom: 4rem;
+    @include md-down {
+        margin-bottom: 2.5rem;
+    }
+    .title {
+        color: var(--color__blue);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 2.2rem;
+    }
+}

@@ -1,0 +1,19 @@
+.topbutton {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    width: 5rem;
+    height: 5rem;
+    @include flex-center;
+    font-size: 2rem;
+    transition: all 0.3s;
+    border-radius: .5rem;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+
+    &.btn-show {
+        visibility: visible;
+        opacity: 1;
+    }
+}

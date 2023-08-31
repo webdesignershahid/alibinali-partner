@@ -1,0 +1,423 @@
+/*=======================================================
+Hero Section Start
+=======================================================*/
+.hero_section {
+    margin-bottom: 2rem;
+    .hero__slider {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-left: -2rem;
+        margin-right: -2rem;
+
+        .swiper-slide {
+            img {
+                min-height: 20rem;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        // Slider Controls
+        .btn-prev-slide, .btn-next-slide {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4rem;
+            height: 4rem;
+            background-color: var(--color__secondary);
+            @include flex-center;
+            z-index: 9;
+            border-radius: 50%;
+            padding: 1rem;
+            
+            @include md-up {
+                width: 5rem;
+                height: 5rem;
+            }
+
+            svg {
+                width: .8rem;
+
+                @include md-up {
+                    width: 1rem;
+                }
+            }
+        }
+        .btn-prev-slide {
+            left: 0;
+            svg {
+                transform: translateX(-.2rem);
+            }
+        }
+        .btn-next-slide {
+            right: 0;
+            svg {
+                transform: translateX(.2rem);
+            }
+        }
+        .hero__pagination {
+            margin-top: -2rem;
+            position: relative;
+            z-index: 2;
+            .swiper-pagination-bullet {
+                background-color: #d0d0d1;
+                opacity: 1;
+                margin: 0 .5rem;
+                width: 1rem;
+                height: 1rem;
+                &-active {
+                    background-color: var(--color__secondary);
+                }
+            }
+        }   
+    }
+}
+/*=======================================================
+  Hero Section End
+=======================================================*/
+
+.weekly_deals {
+    background-color: #e5e7e7;
+    padding: 6rem 0;
+}
+.new_deals {
+    background-color: #f5f6f6;
+    padding: 6rem 0;
+}
+.popular_deals {
+    background-color: #e5e7e7;
+    padding: 6rem 0;
+}
+
+/*=======================================================
+  Product Slider End
+=======================================================*/
+.product__slider {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    overflow: hidden;
+
+    // Slider Controls
+    .btn-prev-slide, .btn-next-slide {
+        position: absolute;
+        top: calc(50% - 2rem);
+        transform: translateY(-50%);
+        width: 4rem;
+        height: 4rem;
+        background-color: var(--color__secondary);
+        @include flex-center;
+        z-index: 9;
+        border-radius: 50%;
+        padding: 1rem;
+        transition: all .2s;
+        &[class*=disabled] {
+            background-color: #a7a9ab;
+        }
+
+        @include md-up {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        svg {
+            width: .8rem;
+
+            @include md-up {
+                width: 1rem;
+            }
+        }
+    }
+    .btn-prev-slide {
+        left: 0;
+        svg {
+            transform: scale(.9) translateX(-.2rem);
+        }
+    }
+    .btn-next-slide {
+        right: 0;
+        svg {
+            transform: scale(.9) translateX(.2rem);
+        }
+    }
+    .slider__pagination {
+        margin-top: 2rem;
+        .swiper-pagination-bullet {
+            background-color: #d0d0d1;
+            opacity: 1;
+            margin: 0 .5rem;
+            &-active {
+                background-color: var(--color__secondary);
+            }
+        }
+    }    
+}
+/*=======================================================
+  Product Slider End
+=======================================================*/
+
+/*=======================================================
+  Product Global style End
+=======================================================*/
+.product-item {
+    background-color: var(--color__white);
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 2rem 2rem 1.5rem;
+
+    .product_thumbnail {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+
+        img {
+            max-height: 30rem;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+
+            &.img-hover {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                z-index: 2;
+                opacity: 0;
+                visibility: hidden;
+                transition: .25s opacity, .25s visibility, transform 1.5s cubic-bezier(0,0,.2,1);
+            }
+        }
+
+        button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            border: 0;
+            background-color: var(--color__white);
+            padding: 1rem;
+            border-radius: 50%;
+        }
+    }
+    .product-info {
+        padding: 2rem 0;
+        overflow: hidden;
+        .product-title {
+            transition: all .2s ease;
+            
+            a {
+                display: block;
+                font-weight: 600;
+                font-size: 1.7rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+    .product-footer {
+        .price {
+            line-height: normal;
+            &.regular {
+                color: var(--color__blue);
+                font-weight: 500;
+                font-size: 1.5rem;
+            }
+            &.sale {
+                color: var(--color__red_poly);
+                font-weight: bold;
+                font-size: 2rem;
+                @include lg-down {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+        .add-to-cart {
+            background-color: var(--color__secondary);
+            width: 5.5rem;
+            height: 5.5rem;
+            @include flex-center;
+            border-radius: 50%;
+        }
+    }
+    &:hover {
+        .product_thumbnail {
+            img {
+                &.img-front {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                &.img-hover {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        .product-title {
+            color: var(--color__blue);
+        }
+    }
+}
+/*=======================================================
+  Product Global style End
+=======================================================*/
+
+
+/*=======================================================
+  Our Brands End
+=======================================================*/
+.our_brands {
+    background-color: #fff;
+    padding: 4rem 0;
+    overflow: hidden;
+    
+    @include xl-up {
+        padding: 6rem 0;
+    }
+
+    .section-title {
+        margin: 2rem 0;
+    }
+
+    .swiper {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-left: -2rem;
+        margin-right: -2rem;
+
+        .btn-prev-slide, .btn-next-slide {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: var(--color__secondary);
+            @include flex-center;
+            z-index: 9;
+            border-radius: 50%;
+            padding: 1rem;
+            transition: all .2s;
+            &[class*=disabled] {
+                background-color: #a7a9ab;
+            }
+            @include md-up {
+                width: 5rem;
+                height: 5rem;
+            }
+
+            svg {
+                width: .8rem;
+
+                @include md-up {
+                    width: 1rem;
+                }
+            }
+        }
+        .btn-prev-slide {
+            left: 0;
+            svg {
+                transform: scale(.9) translateX(-.2rem);
+            }
+        }
+        .btn-next-slide {
+            right: 0;
+            svg {
+                transform: scale(.9) translateX(.2rem);
+            }
+        }
+    }
+
+    .brand-item {
+        height: 10rem;
+
+        @include lg-up {
+            height: 12rem;
+        }
+        @include xl-up {
+            height: 15rem;
+        }
+
+        a {
+            padding: 2rem 2rem;
+            @include flex-center;
+            text-align: center;
+            border-radius: 1rem;
+            transition: all .3s;
+            height: 100%;
+            
+            @include xl-up {
+                padding: 3rem 2rem;
+            }
+            &:hover {
+                background-color: #ebebeb;
+            }
+        }
+    }    
+}
+/*=======================================================
+  Our Brands End
+=======================================================*/
+
+
+/*=======================================================
+  Subscribe CTA start
+=======================================================*/
+.subscribe_cta {
+    background-color: var(--color__blue);
+    padding: 6rem 0;
+
+    p {
+        font-size: 1.6rem;
+        line-height: 1.65;
+        @include lg-down {
+            font-size: 1.5rem;
+        }
+    }
+
+    .section-content {
+        margin-bottom: 2rem;
+        @include md-down {
+            max-width: 40rem;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+        .title {
+            margin-bottom: 1rem;
+        }
+    }
+
+    form {
+        @include md-down {
+            max-width: 45rem;
+            margin: 0 auto;
+        }
+        .form-control {
+            height: 5.5rem;
+            box-shadow: none;
+            padding: 1rem 1.5rem;
+            font-size: 1.6rem;
+
+            &::placeholder {
+                font-style: italic;
+            }
+        }
+        button {
+            border: 0;
+            background-color: var(--color__secondary);
+            padding: 0 3rem;
+            font-weight: 500;
+            font-size: 1.5rem;
+            
+            @include lg-up {
+                padding: 0 5rem;
+            }
+        }
+    }
+}
+/*=======================================================
+  Subscribe CTA End
+=======================================================*/
